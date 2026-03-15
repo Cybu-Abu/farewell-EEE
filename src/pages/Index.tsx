@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import VaultLanding from "@/components/VaultLanding";
 import GalleryPage from "@/components/GalleryPage";
-import { memories } from "@/data/memories";
+import type { Memory } from "@/data/memories";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,25 +11,31 @@ const PHOTOS_PER_PAGE = 5;
 
 const Index = () => {
   const [entered, setEntered] = useState(false);
+  const [memories, setMemories] = useState<Memory[]>([]);
+
+  useEffect(() => {
+    fetch("/images.json")
+      .then((res) => res.json())
+      .then((data: Memory[]) => setMemories(data));
+  }, []);
 
   // Split memories into pages of 5
-  const pages: typeof memories[] = [];
+  const pages: Memory[][] = [];
   for (let i = 0; i < memories.length; i += PHOTOS_PER_PAGE) {
     pages.push(memories.slice(i, i + PHOTOS_PER_PAGE));
   }
 
   useEffect(() => {
-    if (entered) {
-      // Refresh ScrollTrigger after vault opens
+    if (entered && memories.length > 0) {
       setTimeout(() => ScrollTrigger.refresh(), 100);
     }
-  }, [entered]);
+  }, [entered, memories]);
 
   return (
     <div className="bg-background min-h-screen">
       {!entered && <VaultLanding onEnter={() => setEntered(true)} />}
 
-      {entered && (
+      {entered && memories.length > 0 && (
         <>
           {/* Header */}
           <div className="h-screen flex items-center justify-center relative noise-overlay vignette">
