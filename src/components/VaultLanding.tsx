@@ -8,7 +8,7 @@ interface VaultLandingProps {
 const VaultLanding = ({ onEnter }: VaultLandingProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphRef>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const doorsLeftRef = useRef<HTMLDivElement>(null);
   const doorsRightRef = useRef<HTMLDivElement>(null);
