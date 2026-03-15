@@ -96,7 +96,4 @@ const VaultLanding = ({ onEnter }: VaultLandingProps) => {
   );
 };
 
-// Fix type
-type HTMLParagraphRef = HTMLParagraphElement;
-
 export default VaultLanding;
