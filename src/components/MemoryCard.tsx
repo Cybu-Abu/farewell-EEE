@@ -12,7 +12,7 @@ const MemoryCard = ({ memory, isReversed, index }: MemoryCardProps) => {
       className={`memory-card flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-6 md:gap-12 lg:gap-16 w-full max-w-5xl mx-auto px-4 md:px-8`}
     >
       {/* Image */}
-      <div className="w-full md:w-1/2 flex-shrink-0">
+      <div className="memory-image w-full md:w-1/2 flex-shrink-0">
         <div className="photo-frame rounded-sm overflow-hidden relative group">
           <img
             src={memory.image}
