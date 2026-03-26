@@ -7,7 +7,7 @@ export interface Memory {
 export const memoriesData: Memory[] = [
   {
     id: 1,
-    image: "/images/memory-1.jpeg",
+    image: `${import.meta.env.BASE_URL}images/memory-1.jpeg`,
     title: "First Day",
     description: "The beginning of a new journey."
   },
