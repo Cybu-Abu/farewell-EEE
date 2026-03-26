@@ -50,6 +50,52 @@ const GalleryPage = ({ memories, pageIndex, isReversed }: GalleryPageProps) => {
         }
       });
 
+    const cards = content.querySelectorAll(".memory-card-wrapper");
+
+    cards.forEach((card, i) => {
+      const imgContainer = card.querySelector(".memory-image");
+
+      // Hide all cards except first
+      if (i > 0) {
+        gsap.set(card, { opacity: 0 });
+      }
+
+      // Set initial image position off-screen
+      if (imgContainer) {
+        const slideFrom = isReversed ? "100%" : "-100%";
+        gsap.set(imgContainer, { x: slideFrom });
+
+        // Slide image in
+        gsap.to(imgContainer, {
+          x: "0%",
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: `${(i / memories.length) * 100}% top`,
+            end: `${((i + 0.5) / memories.length) * 100}% top`,
+            scrub: 1,
+          },
+        });
+      }
+
+      // Show card (fade in text only, image slides)
+      if (i > 0) {
+        gsap.to(card, {
+          opacity: 1,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: section,
+            start: `${(i / memories.length) * 100}% top`,
+            end: `${((i + 0.3) / memories.length) * 100}% top`,
+            scrub: 1,
+          },
+        });
+      }
+
+      // Hide previous card
+      if (i > 0) {
+        gsap.to(cards[i - 1], {
       cards.forEach((card, i) => {
         if (i === 0) return;
 
