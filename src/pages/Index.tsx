@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import VaultLanding from "@/components/VaultLanding";
 import GalleryPage from "@/components/GalleryPage";
 import type { Memory } from "@/data/memories";
+import { memoriesData } from "@/data/memories";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,10 +14,9 @@ const Index = () => {
   const [entered, setEntered] = useState(false);
   const [memories, setMemories] = useState<Memory[]>([]);
 
+  // SAME logic as before, just no fetch
   useEffect(() => {
-    fetch("/images.json")
-      .then((res) => res.json())
-      .then((data: Memory[]) => setMemories(data));
+    setMemories(memoriesData);
   }, []);
 
   // Split memories into pages of 5
