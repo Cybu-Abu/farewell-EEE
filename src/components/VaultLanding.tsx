@@ -5,7 +5,7 @@ interface VaultLandingProps {
   onEnter: () => void;
 }
 
-const VIDEO_SRC = `${import.meta.env.BASE_URL}public/videos/bg.mp4`;
+const VIDEO_SRC = `${import.meta.env.BASE_URL}/videos/bg.mp4`;
 
 const VaultLanding = ({ onEnter }: VaultLandingProps) => {
   const containerRef   = useRef<HTMLDivElement>(null);
