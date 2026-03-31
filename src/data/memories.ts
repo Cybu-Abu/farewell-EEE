@@ -20,20 +20,20 @@ export const memoriesData: Memory[] = [
   {
     id: 3,
     image: `${import.meta.env.BASE_URL}images/memory-3.jpg`,
-    title: "A Quick Stop",
-    description: "Just a stop for the photo, but not for the memory."
+    title: "Diverging Currents",
+    description: "One last frame before my Apprenticeship, short time with your batch gave me great memories and friendship that I'll cherish ✨ - From Allan Oommen Kurian"
   },
   {
     id: 4,
     image: `${import.meta.env.BASE_URL}images/memory-3.jpeg`,
-    title: "Under One Sky",
-    description: "A simple group shot that carries more than it shows."
+    title: "Post Exam Bliss",
+    description: "Stress gone, smile back on!"
   },
   {
     id: 5,
     image: `${import.meta.env.BASE_URL}images/memory-5.jpg`,
-    title: "The Usual Crowd",
-    description: "The kind of frame that makes a regular day feel important."
+    title: "Team EEE Mega IV @VISL",
+    description: "All our EEE batches united for an industrial visit to Vizhinjam International Seaport—what an unforgettable day, made possible only thanks to you all!"
   },
   {
     id: 6,
@@ -80,8 +80,8 @@ export const memoriesData: Memory[] = [
   {
     id: 13,
     image: `${import.meta.env.BASE_URL}images/memory-13.jpg`,
-    title: "Traditional Day",
-    description: "One corridor, many shades, and a calm kind of beauty."
+    title: " Diva's of EEE",
+    description: "Unmatched resilience and prowess in sarees!"
   },
   {
     id: 14,
